@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&display=swap");
+
+$color-primary: #1584bf;
+$color-secondary: hsl(0, 0%, 95%);
+$color-tertiary: hsl(0, 0%, 100%);
+
+$base-font-size: 1rem;
+$border-radius: 4px;
+
+html {
+  background: $color-primary;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4rem 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: $color-secondary;
+  color: $color-primary;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-size: $base-font-size;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.wrapper {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+h1,
+h2 {
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+input[type="radio"] {
+  // appearance: none;
+  margin: 0 0.5rem;
+  border: 3px solid $color-primary;
+  outline: none;
+}
+
+fieldset {
+  padding: 1rem 0;
+  margin: unset;
+  border: none;
+}
+
+%fields {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  background: $color-tertiary;
+  border-radius: $border-radius;
+}
+
+.select-buttons label {
+  @extend %fields;
+}
+
+.select-buttons input {
+  // visibility: hidden;
+}
+
+.text-inputs input {
+  @extend %fields;
+  border: none;
+  border-bottom: 3px solid $color-primary;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  // position: relative;
+  margin: 2rem 0 0 0;
+  padding: 0.5rem 2rem;
+  background: $color-primary;
+  color: $color-tertiary;
+  border: none;
+  border-radius: $border-radius;
+}
