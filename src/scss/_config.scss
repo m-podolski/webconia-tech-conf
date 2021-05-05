@@ -1,0 +1,44 @@
+$fontbase: 1rem;
+$leading: 1.4;
+$leadingDisp: 1.2;
+$viewfactor: 1.5vmin;
+$viewfactorDisp: $viewfactor * 0.5;
+
+$unit: calc((#{$fontbase} + #{$viewfactor}) * #{$leading});
+
+@function raster($scale) {
+  $factor: $scale * 0.3;
+  @return calc(#{$unit} * #{$factor});
+}
+
+@function window($scale) {
+  @return calc(#{$viewfactor} * #{$scale});
+}
+
+@mixin fontsize($fontbase, $view, $lead, $scale) {
+  font-size: calc((#{$fontbase} + #{$view}) * #{$scale});
+  line-height: calc(((#{$fontbase} + #{$view}) * #{$lead}) * #{$scale});
+}
+
+@mixin font($weight, $style, $scale, $type) {
+  font-weight: $weight;
+  font-style: $style;
+  @if $type == disp {
+    $lead: $leadingDisp;
+    $view: $viewfactorDisp;
+    @include fontsize($fontbase, $view, $lead, $scale);
+  } @else {
+    $lead: $leading;
+    $view: $viewfactor;
+    @include fontsize($fontbase, $view, $lead, $scale);
+  }
+}
+
+$roundness: raster(1);
+$roundness-small: raster(0.5);
+$content-max-width: raster(60);
+
+$contentTrans: 0.2s;
+$elemTrans: 0.1s;
+
+$bp-icons: 45em;

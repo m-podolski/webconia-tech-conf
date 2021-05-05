@@ -1,0 +1,53 @@
+@use "./config";
+@use "./colours";
+@use "./base";
+
+.form .honeypot {
+  position: absolute;
+  left: -9999px;
+}
+.form label {
+  @include config.font(600, normal, 0.6, body);
+}
+.form input {
+  width: 100%;
+  margin: config.raster(0.25) 0 config.raster(1) 0;
+  padding: config.raster(1) config.raster(0.5) config.raster(0.5)
+    config.raster(0.5);
+  border: none;
+  border-bottom: config.raster(0.5) solid white;
+  border-radius: config.$roundness-small;
+  background: white;
+  color: colours.$content-running-text;
+}
+.form .valid,
+.form .invalid {
+  outline: none;
+}
+.form .valid {
+  border-bottom-color: colours.$content-light;
+}
+.form .invalid {
+  border-bottom-color: colours.$content-error;
+}
+.form ::placeholder {
+  color: colours.$content-text-medium;
+}
+.form .error-info {
+  margin: config.raster(-0.5) 0 config.raster(1) 0;
+  padding: config.raster(0.5);
+  border-radius: config.$roundness-small;
+  background: colours.$content-bg-text;
+  color: colours.$content-text-sec-dark;
+  @include config.font(600, normal, 0.5, body);
+}
+.form .noerror {
+  display: none;
+}
+.form .error {
+  display: block;
+}
+.form .button-submit {
+  display: block;
+  margin: 0.5rem auto;
+}

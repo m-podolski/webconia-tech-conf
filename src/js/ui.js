@@ -1,9 +1,3 @@
-import { init as topbar } from './topbar.js';
-import { init as sidebar } from './sidebar.js';
-import { init as channel } from './channel.js';
-// import { init as videos } from './videos.js';
+import { init as contactform } from './contactform.js';
 
-topbar();
-sidebar();
-channel();
-// videos();
+contactform();

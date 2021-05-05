@@ -28,18 +28,10 @@ async function clean(cb) {
 
 function copyDeps(cb) {
 
-  src('./node_modules/normalize.css/normalize.css')
-    .pipe(postcss([cssnano()]))
-    .pipe(dest(dist + 'vendor/normalize.css'));
-
   cb();
 }
 
 function copyDepsProd(cb) {
-
-  src('./node_modules/normalize.css/normalize.css')
-    .pipe(postcss([cssnano()]))
-    .pipe(dest(dist + 'vendor/normalize.css'));
 
   cb();
 }
@@ -47,12 +39,12 @@ function copyDepsProd(cb) {
 function css(cb) {
 
   src(source + 'scss/*.scss')
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass.sync({ sourcemap: false, outputStyle: 'expanded' }))
     .on('error', (err) => {
       return console.log('Error!', err.message);
     })
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(dest(dist + 'css'));
 
   cb();
