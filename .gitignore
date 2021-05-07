@@ -1,0 +1,19 @@
+node_modules/
+vendor/
+dist/
+
+*.log
+.cache
+.DS_Store
+src/.temp
+.env
+.env.*
+*.jpg
+*.png
+*.gif
+*.webp
+*.pdf
+*.woff
+*.woff2
+.vscode
+# *.code-workspace

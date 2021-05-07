@@ -43,6 +43,7 @@ function setInitialState(dom, formValidityState) {
     // Content-ARIA-state
     node.setAttribute(conf.contentStateAria, true);
   }
+
   // primaryControl-display-state
   // dom.primaryControl.classList.add(conf.primaryControlDispState);
   // primaryControl-Interaction-state
@@ -101,6 +102,7 @@ function validateForm(dom) {
       invalidRequiredFields -= 1;
     }
   }
+
   if (invalidRequiredFields === 0) {
     // primaryControl-display-state
     dom.primaryControl.classList.remove(conf.primaryControlDispState);

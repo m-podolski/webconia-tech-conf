@@ -1,8 +1,7 @@
 {
-  "name": "pw-generator",
-  "version": "1.0.0",
+  "name": "webconia-tech-conf",
   "description": "",
-  "main": "index.js",
+  "main": "src/js/ui.js",
   "scripts": {
     "start": "gulp",
     "build": "gulp prod",
@@ -10,7 +9,7 @@
     "copy": "mkdir dist && rsync -avr --exclude=\"/scss\" src/ dist",
     "publish": ""
   },
-  "author": "",
+  "author": "Malte Podolski",
   "license": "ISC",
   "devDependencies": {
     "@prettier/plugin-php": "^0.16.2",
@@ -18,11 +17,10 @@
     "browser-sync": "^2.26.13",
     "cssnano": "^4.1.10",
     "del": "^6.0.0",
-    "eslint": "^7.19.0",
+    "eslint": "^7.25.0",
     "gulp": "^4.0.2",
     "gulp-dart-sass": "^1.0.2",
     "gulp-postcss": "^9.0.0",
-    "gulp-rename": "^2.0.0",
     "gulp-sourcemaps": "^2.6.5",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.2.5",
