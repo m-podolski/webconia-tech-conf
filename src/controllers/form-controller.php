@@ -36,9 +36,6 @@ function readForm($fields)
 
 function validateForm($fields)
 {
-  $prevInvalidFields = isset($_SESSION["invalidFields"])
-    ? $_SESSION["invalidFields"]
-    : false;
   $invalidFields = [];
 
   $validNames = "/^(?:[- a-zA-Z\x{00c4}-\x{00fd}]{2,30}){1,3}$/";
@@ -62,6 +59,7 @@ function validateForm($fields)
           $invalidFields[$name] = $field;
         }
         break;
+      // This is the honeypot field
       case "website":
         if (empty($field) === false) {
           header("Location: http://localhost/webconia/");
@@ -71,12 +69,14 @@ function validateForm($fields)
     }
   }
 
+  // Put everything into session for prefilling form fields
   foreach ($fields as $name => $field) {
     $_SESSION[$name] =
       !empty($_SESSION[$name]) && $field === false ? $_SESSION[$field] : $field;
   }
 
   if (empty($invalidFields)) {
+    unset($_SESSION["invalidFields"]);
     return true;
   } else {
     $_SESSION["invalidFields"] = $invalidFields;
@@ -93,7 +93,6 @@ $formFields = ["website", "firstname", "lastname", "organisation", "email"];
 if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
   $readFields = readForm($formFields);
   $isValid = validateForm($readFields);
-  // validateForm($readFields);
 
   echo var_dump($isValid);
 

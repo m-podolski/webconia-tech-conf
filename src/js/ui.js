@@ -1,3 +1,4 @@
-import { init as contactform } from './contactform.js';
+import { init as contactform } from "./contactform.js";
 
-contactform();
+// formValidityState is rendered by form.php
+contactform(formValidityState);

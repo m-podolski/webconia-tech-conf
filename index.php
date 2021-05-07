@@ -23,6 +23,7 @@ include "src/controllers/form-controller.php";
     rel="stylesheet"
     href="./dist/css/styles.css"
   />
+
   <script
     type="module"
     src="./dist/js/ui.js"
@@ -49,8 +50,7 @@ include "src/controllers/form-controller.php";
   <pre>
     <?php
     print_r($_POST);
-    // print_r($_SESSION);
-    print_r($_SESSION["invalidFields"]);
+    print_r($_SESSION);
 
 // print_r($_SERVER);
 // print_r($_REQUEST);

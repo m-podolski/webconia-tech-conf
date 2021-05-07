@@ -1,24 +1,13 @@
-<script>
+<script defer>
 let formValidityState =
-  <?php
-  $array = [
-    "field1" => "value1",
-    "field2" => "value2",
-  ];
-  // echo json_encode(
-  //   $array,
-  //   JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK,
-  // );
-
-  if (empty($_SESSION["invalidFields"]) === false) {
+  <?php if (empty($_SESSION["invalidFields"]) === false) {
     echo json_encode(
       $_SESSION["invalidFields"],
       JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK,
     );
   } else {
-    echo "false";
-  }
-  ?>;
+    echo "'valid'";
+  } ?>;
 </script>
 
 <section
@@ -58,17 +47,10 @@ let formValidityState =
         : $_SESSION["firstname"]; ?>"
       placeholder="<?php echo $microcopy["form-first-plh"]; ?>"
       required
-      class="<?php echo empty($_SESSION["invalidFields"]["firstname"])
-        ? "valid"
-        : "invalid"; ?>"
     />
     <!-- pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$" -->
 
-    <p class="error-info
-    <?php echo empty($_SESSION["invalidFields"]["firstname"])
-      ? "noerror"
-      : "error"; ?>
-    ">
+    <p class="error-info noerror">
       <?php echo $microcopy["form-first-err"]; ?>
     </p>
 
@@ -85,17 +67,10 @@ let formValidityState =
         : $_SESSION["lastname"]; ?>"
       placeholder="<?php echo $microcopy["form-last-plh"]; ?>"
       required
-      class="<?php echo empty($_SESSION["invalidFields"]["lastname"])
-        ? "valid"
-        : "invalid"; ?>"
     />
     <!-- pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$" -->
 
-    <p class="error-info
-    <?php echo empty($_SESSION["invalidFields"]["lastname"])
-      ? "noerror"
-      : "error"; ?>
-    ">
+    <p class="error-info noerror">
       <?php echo $microcopy["form-last-err"]; ?>
     </p>
 
@@ -110,17 +85,10 @@ let formValidityState =
         ? ""
         : $_SESSION["organisation"]; ?>"
       placeholder="<?php echo $microcopy["form-org-plh"]; ?>"
-      class="<?php echo empty($_SESSION["invalidFields"]["organisation"])
-        ? "valid"
-        : "invalid"; ?>"
     />
     <!-- pattern="^[-\. a-zA-Z0-9\u00c4-\u00fd]{2,100}$" -->
 
-    <p class="error-info
-    <?php echo empty($_SESSION["invalidFields"]["organisation"])
-      ? "noerror"
-      : "error"; ?>
-    ">
+    <p class="error-info noerror">
       <?php echo $microcopy["form-org-err"]; ?>
     </p>
 
@@ -135,17 +103,10 @@ let formValidityState =
       value="<?php echo empty($_SESSION["email"]) ? "" : $_SESSION["email"]; ?>"
       placeholder="<?php echo $microcopy["form-email-plh"]; ?>"
       required
-      class="<?php echo empty($_SESSION["invalidFields"]["email"])
-        ? "valid"
-        : "invalid"; ?>"
     />
     <!-- type="email" -->
 
-    <p class="error-info
-    <?php echo empty($_SESSION["invalidFields"]["email"])
-      ? "noerror"
-      : "error"; ?>
-    ">
+    <p class="error-info noerror">
       <?php echo $microcopy["form-email-err"]; ?>
     </p>
 
