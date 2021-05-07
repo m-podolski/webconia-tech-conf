@@ -1,7 +1,6 @@
 @use "./config";
 @use "./colours";
 
-// @import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
@@ -27,16 +26,8 @@ body {
   padding: config.raster(3) config.window(3);
 }
 header {
-  // min-height: 100vh;
   padding: 10vh 0;
   color: colours.$content-running-text-bright;
-}
-.header-form {
-  display: block;
-  margin: 0 0 -5px 0;
-}
-.header-form-1 {
-  fill: colours.$site-page-bg;
 }
 main,
 html {
@@ -55,35 +46,14 @@ h3,
 h4 {
   font-family: "Maven Pro", sans-serif;
 }
-h1,
-.subheading-block,
-.summary {
-  position: relative;
-  z-index: 2;
-}
 h1 {
   margin: unset;
   padding: config.window(6) 0 config.window(6) 0;
   @include config.font(800, normal, 2, disp);
   color: colours.$site-btn-ind;
 }
-.subheading-block {
-  max-width: config.$content-max-width;
-  margin: 0 0 config.raster(15) 0;
-}
 .subheading {
   @include config.font(600, normal, 1, disp);
-}
-.summary {
-  display: flex;
-  flex-flow: column nowrap;
-  max-width: config.$content-max-width;
-  margin: 0 auto;
-  padding: config.raster(4) config.raster(2);
-  color: colours.$content-text-dark;
-  background: colours.$content-extra-light;
-  border-radius: config.$roundness;
-  @include config.font(500, italic, 0.7, body);
 }
 .button-container {
   display: flex;
@@ -112,6 +82,7 @@ h1 {
   &:focus:not(.button-disabled) {
     background: colours.$content-running-text-bright;
     color: colours.$site-btn-pri;
+    border: config.raster(0.25) solid colours.$site-btn-pri;
   }
   &:active:not(.button-disabled),
   &.selected:not(.button-disabled) {
@@ -127,27 +98,12 @@ h1 {
   &:focus:not(.button-disabled) {
     background: colours.$content-running-text-bright;
     color: colours.$site-btn-sec;
+    border: config.raster(0.25) solid colours.$site-btn-sec;
   }
   &:active:not(.button-disabled),
   &.selected:not(.button-disabled) {
     background: colours.$content-running-text-bright;
     color: colours.$site-btn-sec;
-    font-style: italic;
-  }
-}
-.button-tertiary {
-  @extend %button;
-  background: colours.$site-btn-ter;
-  color: colours.$site-btn-ter-col;
-  &:hover:not(.button-disabled),
-  &:focus:not(.button-disabled) {
-    background: colours.$content-running-text-bright;
-    color: colours.$site-bg-dark;
-  }
-  &:active:not(.button-disabled),
-  &.selected:not(.button-disabled) {
-    background: colours.$content-running-text-bright;
-    color: colours.$site-btn-pri;
     font-style: italic;
   }
 }
@@ -195,13 +151,6 @@ img {
   display: block;
   width: 100%;
   height: auto;
-}
-.profile-img {
-  clip-path: circle(50%);
-  width: 15rem;
-  float: left;
-  margin: config.raster(2);
-  background: colours.$content-medium;
 }
 ol,
 ul {
@@ -288,22 +237,4 @@ tbody tr:nth-child(even) {
 }
 td {
   padding: config.raster(0.5);
-}
-.footnote-ref {
-  color: colours.$content-text-sec-dark;
-  @include config.font(800, italic, 0.6, body);
-  text-decoration: none;
-}
-.footnotes ol {
-  list-style: none;
-  counter-reset: my-counter;
-  & li {
-    counter-increment: my-counter;
-    padding: 0 0 0 0.5rem;
-  }
-  & li::marker {
-    content: counter(my-counter) ".";
-    color: colours.$content-text-sec-dark;
-    @include config.font(800, italic, 0.7, body);
-  }
 }

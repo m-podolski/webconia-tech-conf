@@ -55,6 +55,11 @@ function setInitialState(dom, formValidityState) {
         Object.keys(formValidityState).includes(control.name) === false;
       validateInput(control, dom);
     }
+  } else {
+    for (const control of dom.controls) {
+      control.initValidity = true;
+      validateInput(control, dom);
+    }
   }
 }
 
@@ -80,7 +85,7 @@ function setInputValidState(control) {
   control.nextElementSibling.style[conf.contentState.property] =
     conf.contentState.valid;
   // Content-ARIA-state
-  control.setAttribute(conf.contentStateAria, true);
+  control.nextElementSibling.setAttribute(conf.contentStateAria, true);
   // Control-display-state
   control.classList.remove(conf.controlsStateInd.invalid);
   control.classList.add(conf.controlsStateInd.valid);
@@ -89,7 +94,7 @@ function setInputValidState(control) {
 function setInputInvalidState(control) {
   control.nextElementSibling.style[conf.contentState.property] =
     conf.contentState.invalid;
-  control.setAttribute(conf.contentStateAria, false);
+  control.nextElementSibling.setAttribute(conf.contentStateAria, false);
   control.classList.remove(conf.controlsStateInd.valid);
   control.classList.add(conf.controlsStateInd.invalid);
 }
@@ -107,7 +112,7 @@ function validateForm(dom) {
     // primaryControl-display-state
     dom.primaryControl.classList.remove(conf.primaryControlDispState);
     // primaryControl-Interaction-state
-    dom.primaryControl.setAttribute(conf.primaryControlIntState, false);
+    dom.primaryControl.removeAttribute(conf.primaryControlIntState);
     // display-state set because disappearing button issue
     dom.primaryControl.style.display = "block";
   } else {

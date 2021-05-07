@@ -20,6 +20,9 @@
   background: white;
   color: colours.$content-running-text;
 }
+.form input:focus {
+  outline: config.raster(0.25) dashed colours.$site-btn-pri;
+}
 .form .valid,
 .form .invalid {
   outline: none;
@@ -47,7 +50,7 @@
 .form .error {
   display: block;
 }
-.form .button-submit {
+.form .button-action {
   display: block;
   margin: 0.5rem auto;
 }
