@@ -46,9 +46,9 @@ let formValidityState =
         ? ""
         : $_SESSION["firstname"]; ?>"
       placeholder="<?php echo $microcopy["form-first-plh"]; ?>"
+      pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$"
       required
     />
-    <!-- pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$" -->
 
     <p class="error-info noerror">
       <?php echo $microcopy["form-first-err"]; ?>
@@ -66,9 +66,9 @@ let formValidityState =
         ? ""
         : $_SESSION["lastname"]; ?>"
       placeholder="<?php echo $microcopy["form-last-plh"]; ?>"
+      pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$"
       required
     />
-    <!-- pattern="^(?:[- a-zA-Z\u00c4-\u00fd]{2,30}){1,3}$" -->
 
     <p class="error-info noerror">
       <?php echo $microcopy["form-last-err"]; ?>
@@ -85,8 +85,8 @@ let formValidityState =
         ? ""
         : $_SESSION["organisation"]; ?>"
       placeholder="<?php echo $microcopy["form-org-plh"]; ?>"
+      pattern="^[-\. a-zA-Z0-9\u00c4-\u00fd]{2,100}$"
     />
-    <!-- pattern="^[-\. a-zA-Z0-9\u00c4-\u00fd]{2,100}$" -->
 
     <p class="error-info noerror">
       <?php echo $microcopy["form-org-err"]; ?>
@@ -97,14 +97,13 @@ let formValidityState =
       <abbr title="required">*</abbr>
     </label>
     <input
-      type="text"
+      type="email"
       id="email"
       name="email"
       value="<?php echo empty($_SESSION["email"]) ? "" : $_SESSION["email"]; ?>"
       placeholder="<?php echo $microcopy["form-email-plh"]; ?>"
       required
     />
-    <!-- type="email" -->
 
     <p class="error-info noerror">
       <?php echo $microcopy["form-email-err"]; ?>
@@ -114,10 +113,19 @@ let formValidityState =
       type="submit"
       name="submit"
       value="submit"
-      class="button-primary button-submit"
-      autocomplete="off"
+      class="button-primary button-action button-submit"
     >
       <?php echo $microcopy["form-submit"]; ?>
     </button>
+
+    <button
+      type="submit"
+      name="setup"
+      value="setup"
+      class="button-primary button-action"
+    >
+      <?php echo $microcopy["form-setup"]; ?>
+    </button>
+
   </form>
 </section>

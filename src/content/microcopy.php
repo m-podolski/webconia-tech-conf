@@ -17,4 +17,6 @@ $microcopy = [
   "form-email-err" =>
     "Bitte hinterlassen Sie eine gültige Email-Adresse (z.B. name@mail.de)",
   "form-submit" => "Senden",
+  "form-setup" => "DB-Setup",
+  "back" => "Zur Startseite",
 ];

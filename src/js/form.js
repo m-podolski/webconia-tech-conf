@@ -129,7 +129,7 @@ function init(formValidityState) {
     control.addEventListener(
       "blur",
       (e) => {
-        // validateInput(control, dom, e);
+        validateInput(control, dom, e);
       },
       true
     );

@@ -84,19 +84,86 @@ function validateForm($fields)
   }
 }
 
-function registerVisitor()
+function setupDatabase($dbConfig)
 {
+  try {
+    $db = new MySQLi(
+      $dbConfig["server"],
+      $dbConfig["user"],
+      $dbConfig["password"],
+    );
+
+    $setupQueries = [
+      "create database if not exists webconia;",
+      "use webconia;",
+      "create table if not exists visitors (
+        id mediumint not null auto_increment,
+        firstname varchar(90) not null,
+        lastname varchar(90) not null,
+        organisation varchar(100) not null,
+        email varchar(254) not null,
+        primary key(id)
+      );",
+    ];
+
+    foreach ($setupQueries as $query) {
+      $db->query($query);
+    }
+  } catch (Exception $ex) {
+    echo "Connection FAILED:" . $ex->getMessage();
+  }
+}
+
+function registerVisitor($dbConfig, $fields)
+{
+  try {
+    $db = new MySQLi(
+      $dbConfig["server"],
+      $dbConfig["user"],
+      $dbConfig["password"],
+      $dbConfig["dbname"],
+    );
+
+    $preparedVisitorEntry = $db->prepare("insert into visitors
+      (firstname, lastname, organisation, email)
+      values (?,?,?,?)");
+
+    $preparedVisitorEntry->bind_param(
+      "ssss",
+      $fields["firstname"],
+      $fields["lastname"],
+      $fields["organisation"],
+      $fields["email"],
+    );
+
+    $preparedVisitorEntry->execute();
+    echo "Data inserted!";
+    $db->close();
+    header("Location: http://localhost/webconia/src/pages/confirmation.php");
+    exit();
+  } catch (Exception $ex) {
+    echo "Connection FAILED:" . $ex->getMessage();
+  }
 }
 
 $formFields = ["website", "firstname", "lastname", "organisation", "email"];
+
+$dbConfig = [
+  "server" => "localhost",
+  "user" => "admin",
+  "password" => "Maki88",
+  "dbname" => "webconia",
+];
+
+if (isset($_POST["setup"]) && $_POST["setup"] === "setup") {
+  setupDatabase($dbConfig);
+}
 
 if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
   $readFields = readForm($formFields);
   $isValid = validateForm($readFields);
 
-  echo var_dump($isValid);
-
   if ($isValid) {
-    registerVisitor();
+    registerVisitor($dbConfig, $readFields);
   }
 }
