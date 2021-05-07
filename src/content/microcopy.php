@@ -15,6 +15,6 @@ $microcopy = [
   "form-email" => "Email",
   "form-email-plh" => "name@mail.de",
   "form-email-err" =>
-    "Bitte hinterlassen Sie eine gültige Email-Adress (z.B. name@mail.de)",
+    "Bitte hinterlassen Sie eine gültige Email-Adresse (z.B. name@mail.de)",
   "form-submit" => "Senden",
 ];

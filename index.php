@@ -1,10 +1,10 @@
 <?php
-
-include "src/partials/microcopy.php";
-include "src/controller/form-controller.php";
-
 session_start();
-initSession();
+// session_unset();
+// $_SESSION["test"] = "test";
+
+include "src/content/microcopy.php";
+include "src/controllers/form-controller.php";
 ?>
 
 <html lang="en">
@@ -42,17 +42,19 @@ initSession();
 
   <main class="landmark">
 
-    <?php include "src/partials/form.php"; ?>
+    <?php include "src/templates/form.php"; ?>
 
   </main>
 
   <pre>
     <?php
     print_r($_POST);
-    print_r($_SESSION);
-    print_r($_SERVER);
-    print_r($_REQUEST);
-    ?>
+    // print_r($_SESSION);
+    print_r($_SESSION["invalidFields"]);
+
+// print_r($_SERVER);
+// print_r($_REQUEST);
+?>
   </pre>
 
   <footer class="landmark">

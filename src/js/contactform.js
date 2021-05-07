@@ -4,8 +4,8 @@ const conf = {
   primaryControl: ".button-submit",
   primaryControlDispState: "button-disabled",
   primaryControlIntState: "disabled",
-  controls: "input:not(.honey), textarea",
-  required: "input[required], textarea[required]",
+  controls: "input:not(.honey)",
+  required: "input[required]",
   controlsStateInd: {
     valid: "valid",
     invalid: "invalid",
@@ -98,7 +98,7 @@ function init() {
     control.addEventListener(
       "blur",
       () => {
-        validateInput(control, dom);
+        // validateInput(control, dom);
       },
       true
     );

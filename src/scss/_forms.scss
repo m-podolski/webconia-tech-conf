@@ -37,7 +37,7 @@
   margin: config.raster(-0.5) 0 config.raster(1) 0;
   padding: config.raster(0.5);
   border-radius: config.$roundness-small;
-  background: colours.$content-bg-text;
+  background: hsl(36, 100%, 90%);
   color: colours.$content-text-sec-dark;
   @include config.font(600, normal, 0.5, body);
 }
