@@ -113,7 +113,8 @@ let formValidityState =
       type="submit"
       name="submit"
       value="submit"
-      class="button-primary button-action button-submit"
+      class="button-secondary button-action button-submit"
+      autocomplete="off"
     >
       <?php echo $microcopy["form-submit"]; ?>
     </button>
@@ -123,9 +124,17 @@ let formValidityState =
       name="setup"
       value="setup"
       class="button-primary button-action"
+      autocomplete="off"
+      formnovalidate
     >
       <?php echo $microcopy["form-setup"]; ?>
     </button>
+
+    <p class="action-info <?php echo empty($_SESSION["dbsetup"])
+      ? "noerror"
+      : ""; ?>">
+      <?php echo $microcopy["form-setup-info"]; ?>
+    </p>
 
   </form>
 </section>

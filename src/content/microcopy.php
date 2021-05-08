@@ -18,5 +18,7 @@ $microcopy = [
     "Bitte hinterlassen Sie eine gültige Email-Adresse (z.B. name@mail.de)",
   "form-submit" => "Senden",
   "form-setup" => "DB-Setup",
+  "form-setup-info" => "Die Datenbank wurde erfolgreich angelegt!",
+  "form-show" => "Einträge anzeigen",
   "back" => "Zur Startseite",
 ];

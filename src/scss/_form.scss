@@ -36,13 +36,21 @@
 .form ::placeholder {
   color: colours.$content-text-medium;
 }
-.form .error-info {
+%action {
   margin: config.raster(-0.5) 0 config.raster(1) 0;
   padding: config.raster(0.5);
   border-radius: config.$roundness-small;
+  @include config.font(600, normal, 0.5, body);
+}
+.form .action-info {
+  @extend %action;
+  background: colours.$content-extra-light;
+  color: colours.$content-text-dark;
+}
+.form .error-info {
+  @extend %action;
   background: hsl(36, 100%, 90%);
   color: colours.$content-text-sec-dark;
-  @include config.font(600, normal, 0.5, body);
 }
 .form .noerror {
   display: none;
@@ -52,5 +60,5 @@
 }
 .form .button-action {
   display: block;
-  margin: 0.5rem auto;
+  margin: config.raster(4) auto;
 }

@@ -2,24 +2,19 @@
 session_start();
 
 include "../content/microcopy.php";
+include "../controllers/form-controller.php";
 ?>
 
 <html lang="de">
 
 <head>
 
-  <?php include "../templates/meta.php"; ?>
+  <?php include "../templates/head.php"; ?>
 
-  <link
-    rel="stylesheet"
-    href="../../dist/css/styles.css"
-  />
-  <script
-    type="module"
-    src="../../dist/js/ui.js"
-  ></script>
+  <title>
+    Webconia Technology Conference 2021 | Registrierung erfolgreich
+  </title>
 
-  <title>Webconia Technology Conference</title>
 </head>
 
 <body>
@@ -33,27 +28,44 @@ include "../content/microcopy.php";
 
     <h2>Bis bald...</h2>
 
-    <h2>Sie haben sich erfolgreich registriert. Wir freuen uns auf Ihren Besuch
-    </h2>
+    <h3>Sie haben sich erfolgreich registriert. Wir freuen uns auf Ihren Besuch
+    </h3>
 
-    <a
-      href="../../"
-      class="button-primary"
+    <div class="button-container">
+      <a
+        href="./"
+        class="button-primary button-action"
+      >
+        <?php echo $microcopy["back"]; ?>
+      </a>
+    </div>
+
+    <form
+      method="post"
+      action="confirmation.php"
+      class="form contact-form"
     >
-      <?php echo $microcopy["back"]; ?>
-    </a>
 
+      <button
+        type="submit"
+        name="show"
+        value="show"
+        class="button-primary button-action"
+      >
+        <?php echo $microcopy["form-show"]; ?>
+      </button>
+
+    </form>
+
+    <?php include "../templates/table-visitors.php"; ?>
 
   </main>
 
   <pre>
     <?php
-    print_r($_POST);
-    print_r($_SESSION);
-
-// print_r($_SERVER);
-// print_r($_REQUEST);
-?>
+    print_r($_SERVER);
+    print_r($_REQUEST);
+    ?>
   </pre>
 
   <footer class="landmark">

@@ -109,6 +109,31 @@ function setupDatabase($dbConfig)
     foreach ($setupQueries as $query) {
       $db->query($query);
     }
+    $_SESSION["dbsetup"] = true;
+  } catch (Exception $ex) {
+    echo "Connection FAILED:" . $ex->getMessage();
+  }
+}
+
+function showVisitors($dbConfig)
+{
+  try {
+    $db = new MySQLi(
+      $dbConfig["server"],
+      $dbConfig["user"],
+      $dbConfig["password"],
+      $dbConfig["dbname"],
+    );
+
+    $showAllQuery = "select * from visitors;";
+
+    $results = $db->query($showAllQuery);
+
+    unset($_SESSION["visitors"]);
+    while ($row = $results->fetch_assoc()) {
+      $_SESSION["visitors"][] = $row;
+    }
+    unset($_SESSION["dbsetup"]);
   } catch (Exception $ex) {
     echo "Connection FAILED:" . $ex->getMessage();
   }
@@ -139,6 +164,7 @@ function registerVisitor($dbConfig, $fields)
     $preparedVisitorEntry->execute();
     echo "Data inserted!";
     $db->close();
+    unset($_SESSION["dbsetup"]);
     header("Location: http://localhost/webconia/src/pages/confirmation.php");
     exit();
   } catch (Exception $ex) {
@@ -166,4 +192,8 @@ if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
   if ($isValid) {
     registerVisitor($dbConfig, $readFields);
   }
+}
+
+if (isset($_POST["show"]) && $_POST["show"] === "show") {
+  showVisitors($dbConfig);
 }

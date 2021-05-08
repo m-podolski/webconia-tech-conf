@@ -35,7 +35,7 @@ html {
 }
 %content {
   max-width: config.$content-max-width;
-  margin: config.raster(3) auto;
+  margin: config.raster(10) auto;
 }
 section {
   @extend %content;
@@ -63,7 +63,8 @@ h1 {
   display: inline-block;
   padding: config.raster(1) config.raster(3);
   color: colours.$content-running-text-bright;
-  border: none;
+  // border: none;
+  border: config.raster(0.25) solid hsla(1, 1%, 1%, 0);
   border-radius: config.raster(1);
   font-family: "Maven Pro", sans-serif;
   @include config.font(800, normal, 0.7, body);
@@ -167,7 +168,8 @@ ol ol {
 %content-heading {
   padding: 0 0 config.raster(0.5) 0;
   color: colours.$content-text-sec-dark;
-  @include config.font(500, italic, 0.7, body);
+  font-family: "Maven Pro", sans-serif;
+  @include config.font(600, normal, 0.7, body);
   font-variant-numeric: oldstyle-nums tabular-nums;
 }
 dt,
@@ -214,27 +216,4 @@ figcaption {
 hr {
   margin: config.raster(2) 0;
   border-top: 0.1rem solid colours.$content-text-sec-dark;
-}
-table {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  font-variant-numeric: lining-nums tabular-nums;
-}
-th {
-  padding: config.raster(0.5);
-  background: colours.$site-page-bg;
-  text-align: left;
-}
-th:nth-child(1) {
-  width: 50%;
-}
-th:nth-child(2) {
-  width: 50%;
-}
-tbody tr:nth-child(even) {
-  background: colours.$site-page-bg;
-}
-td {
-  padding: config.raster(0.5);
 }
