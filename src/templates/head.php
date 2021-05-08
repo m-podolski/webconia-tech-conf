@@ -7,3 +7,13 @@
   name="viewport"
   content="width=device-width, initial-scale=1.0"
 />
+<base href="<?php echo BASE_URL; ?>">
+
+<link
+  rel="stylesheet"
+  href="./dist/css/styles.css"
+/>
+<script
+  type="module"
+  src="./dist/js/ui.js"
+></script>

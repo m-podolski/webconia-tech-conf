@@ -84,13 +84,13 @@ function validateForm($fields)
   }
 }
 
-function setupDatabase($dbConfig)
+function setupDatabase()
 {
   try {
     $db = new MySQLi(
-      $dbConfig["server"],
-      $dbConfig["user"],
-      $dbConfig["password"],
+      DB_CONFIG["server"],
+      DB_CONFIG["user"],
+      DB_CONFIG["password"],
     );
 
     $setupQueries = [
@@ -115,14 +115,14 @@ function setupDatabase($dbConfig)
   }
 }
 
-function showVisitors($dbConfig)
+function showVisitors()
 {
   try {
     $db = new MySQLi(
-      $dbConfig["server"],
-      $dbConfig["user"],
-      $dbConfig["password"],
-      $dbConfig["dbname"],
+      DB_CONFIG["server"],
+      DB_CONFIG["user"],
+      DB_CONFIG["password"],
+      DB_CONFIG["dbname"],
     );
 
     $showAllQuery = "select * from visitors;";
@@ -139,14 +139,14 @@ function showVisitors($dbConfig)
   }
 }
 
-function registerVisitor($dbConfig, $fields)
+function registerVisitor($fields)
 {
   try {
     $db = new MySQLi(
-      $dbConfig["server"],
-      $dbConfig["user"],
-      $dbConfig["password"],
-      $dbConfig["dbname"],
+      DB_CONFIG["server"],
+      DB_CONFIG["user"],
+      DB_CONFIG["password"],
+      DB_CONFIG["dbname"],
     );
 
     $preparedVisitorEntry = $db->prepare("insert into visitors
@@ -165,7 +165,7 @@ function registerVisitor($dbConfig, $fields)
     echo "Data inserted!";
     $db->close();
     unset($_SESSION["dbsetup"]);
-    header("Location: http://localhost/webconia/src/pages/confirmation.php");
+    header("Location: " . BASE_URL . "/src/pages/confirmation.php");
     exit();
   } catch (Exception $ex) {
     echo "Connection FAILED:" . $ex->getMessage();
@@ -174,15 +174,8 @@ function registerVisitor($dbConfig, $fields)
 
 $formFields = ["website", "firstname", "lastname", "organisation", "email"];
 
-$dbConfig = [
-  "server" => "localhost",
-  "user" => "admin",
-  "password" => "Maki88",
-  "dbname" => "webconia",
-];
-
 if (isset($_POST["setup"]) && $_POST["setup"] === "setup") {
-  setupDatabase($dbConfig);
+  setupDatabase();
 }
 
 if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
@@ -190,10 +183,10 @@ if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
   $isValid = validateForm($readFields);
 
   if ($isValid) {
-    registerVisitor($dbConfig, $readFields);
+    registerVisitor($readFields);
   }
 }
 
 if (isset($_POST["show"]) && $_POST["show"] === "show") {
-  showVisitors($dbConfig);
+  showVisitors();
 }
