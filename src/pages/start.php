@@ -26,7 +26,7 @@ include_once BASE_PATH . "/src/controllers/form-controller.php";
 
     <div class="header-wrapper">
       <img
-        src="./src/images/webconia.png"
+        src="./dist/images/webconia.webp"
         alt="Webconia"
         class="header-logo"
       />

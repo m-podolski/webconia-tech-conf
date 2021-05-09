@@ -17,27 +17,27 @@ header {
 }
 .image-start-page {
   @extend %image-bg;
-  background-image: url("../../src/images/header-juvnsky.jpg");
+  background-image: url("../images/header-juvnsky.webp");
 }
 .image-confirmation-page {
   @extend %image-bg;
-  background-image: url("../../src/images/keyboard-wiediger.jpg");
+  background-image: url("../images/keyboard-wiediger.webp");
 }
 .image-topics {
   @extend %image-bg;
-  background-image: url("../../src/images/big-screen-paananen.jpg");
+  background-image: url("../images/big-screen-paananen.webp");
 }
 .image-program {
   @extend %image-bg;
-  background-image: url("../../src/images/workshop-leon.jpg");
+  background-image: url("../images/workshop-leon.webp");
 }
 .image-location {
   @extend %image-bg;
-  background-image: url("../../src/images/speicherstadt-meduana.jpg");
+  background-image: url("../images/speicherstadt-meduana.webp");
 }
 .image-register {
   @extend %image-bg;
-  background-image: url("../../src/images/foyer-hanaoka.jpg");
+  background-image: url("../images/foyer-hanaoka.webp");
   background-position: 50% 90%;
 }
 
