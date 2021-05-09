@@ -22,18 +22,23 @@ include_once BASE_PATH . "/src/controllers/form-controller.php";
 
   <?php include BASE_PATH . "/src/templates/navigation.php"; ?>
 
-  <header class="landmark">
+  <header class="landmark image-confirmation-page">
 
-    <?php include BASE_PATH . "/src/templates/header.php"; ?>
+    <div class="header-wrapper">
+      <img
+        src="./src/images/webconia.png"
+        alt="Webconia"
+        class="header-logo"
+      />
+      <h1>Bis bald...</h1>
+    </div>
 
   </header>
 
   <main class="landmark">
 
-    <h2>Bis bald...</h2>
-
-    <h3>Sie haben sich erfolgreich registriert. Wir freuen uns auf Ihren Besuch
-    </h3>
+    <h2>Sie haben sich erfolgreich registriert. Wir freuen uns auf Ihren Besuch
+    </h2>
 
     <div class="button-container">
       <a

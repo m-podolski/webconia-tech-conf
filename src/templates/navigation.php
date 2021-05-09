@@ -1,7 +1,7 @@
 <?php $navSections = [
   "start" => "Start",
   "topics" => "Themen",
-  "scope" => "Programm",
+  "program" => "Programm",
   "location" => "Veranstaltungsort",
   "register" => "Anmeldung",
   "contact" => "Kontakt",
@@ -40,6 +40,3 @@
     <?php endforeach; ?>
   </ul>
 </nav>
-
-<pre>
-<?php echo print_r($_SERVER); ?></pre>

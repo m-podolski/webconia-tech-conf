@@ -10,11 +10,11 @@ let formValidityState =
   } ?>;
 </script>
 
-<section
+<div
   id="contact"
   class="contact-form"
 >
-  <h2>Anmeldung</h2>
+
   <form
     method="post"
     action="index.php"
@@ -137,4 +137,4 @@ let formValidityState =
     </p>
 
   </form>
-</section>
+</div>

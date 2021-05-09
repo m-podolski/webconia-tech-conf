@@ -1,0 +1,59 @@
+@use "./config";
+@use "./colours";
+
+header {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.heading-wrapper {
+  height: 100vh;
+  margin: 20vh config.window(-3);
+}
+%image-bg {
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image-start-page {
+  @extend %image-bg;
+  background-image: url("../../src/images/header-juvnsky.jpg");
+}
+.image-confirmation-page {
+  @extend %image-bg;
+  background-image: url("../../src/images/keyboard-wiediger.jpg");
+}
+.image-topics {
+  @extend %image-bg;
+  background-image: url("../../src/images/big-screen-paananen.jpg");
+}
+.image-program {
+  @extend %image-bg;
+  background-image: url("../../src/images/workshop-leon.jpg");
+}
+.image-location {
+  @extend %image-bg;
+  background-image: url("../../src/images/speicherstadt-meduana.jpg");
+}
+.image-register {
+  @extend %image-bg;
+  background-image: url("../../src/images/foyer-hanaoka.jpg");
+  background-position: 50% 90%;
+}
+
+.header-wrapper {
+  position: relative;
+  z-index: 2;
+}
+.header-logo {
+  width: 20vw;
+  margin: 10vw 0 0 0;
+}
+.logo-color {
+  color: colours.$content-medium;
+}
+.content-list,
+.footer-list {
+  list-style: none;
+  padding: unset;
+}

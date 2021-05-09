@@ -24,3 +24,5 @@ $microcopy = [
   "form-show" => "Einträge anzeigen",
   "back" => "Zur Startseite",
 ];
+
+?>

@@ -1,0 +1,21 @@
+@use "./config";
+@use "./colours";
+@use "./base";
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+th {
+  padding: config.raster(0.5);
+  background: colours.$site-page-bg;
+  text-align: left;
+}
+tbody tr:nth-child(odd) {
+  background: white;
+}
+td {
+  padding: config.raster(0.5);
+}
