@@ -27,11 +27,6 @@ Für eine Einschreibung benötigen wir:
 
 - For convenience the registrated users can be shown via a button on the confirmation page. This would of course be behind a login in production.
 
-### To Do
-
-  - image processing
-  - setup hints (yarn run / gulp cli)
-
 ### Image Credits
 
 <a href="https://unsplash.com/@meduana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Meduana</a> on <a href="https://unsplash.com/s/photos/hamburg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

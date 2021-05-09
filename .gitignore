@@ -9,8 +9,8 @@ resources/
 src/.temp
 .env
 .env.*
-*.jpg
-*.png
+# *.jpg
+# *.png
 *.gif
 *.webp
 *.pdf
