@@ -1,4 +1,6 @@
 @use '../../node_modules/normalize.css/normalize.css';
 @use './base';
-@use './page';
 @use './form';
+@use './page';
+@use './navigation';
+@use './tables';

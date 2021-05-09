@@ -1,6 +1,8 @@
 <?php
 
 $microcopy = [
+  "nav-skip" => "Menü überspringen",
+  "nav-button" => "Menü",
   "form-first" => "Vorname",
   "form-first-plh" => "Vorname",
   "form-first-err" =>

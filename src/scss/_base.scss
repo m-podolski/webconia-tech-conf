@@ -63,7 +63,6 @@ h1 {
   display: inline-block;
   padding: config.raster(1) config.raster(3);
   color: colours.$content-running-text-bright;
-  // border: none;
   border: config.raster(0.25) solid hsla(1, 1%, 1%, 0);
   border-radius: config.raster(1);
   font-family: "Maven Pro", sans-serif;
