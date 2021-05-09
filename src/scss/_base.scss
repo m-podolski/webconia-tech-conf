@@ -136,7 +136,7 @@ h4 {
 }
 h2 {
   display: inline-block;
-  margin: 20vh 0 0 0;
+  margin: 20vh 0 config.raster(10) 0;
   padding: config.raster(1) config.raster(2);
   @include config.font(800, normal, 1.3, body);
   color: colours.$content-extra-dark;
