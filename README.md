@@ -17,7 +17,7 @@ Für eine Einschreibung benötigen wir:
 
 1. After putting the project on your server, open `config.php` and configure **PROJECT_DIR** and **DB_CONFIG** for your setup. These are needed for all the paths and the database access to work.
 
-1. Assets have to be processed into a `dist` directory. **Gulp** is already set up to do this. After installing the dependencies via `yarn install` you can start development-mode with `yarn run start` or create production files with `yarn run build`. (Both will use the locally installed **Gulp-CLI** via `npx`)
+1. Assets have to be processed into a `dist` directory. **Gulp** is already set up to do this. After installing the dependencies via `yarn install` you can start development-mode with `yarn run start` or create production files with `yarn run build`. (Both will use the locally installed **Gulp-CLI** via `npx`). If you have named your project directory something other than `webconia` you must change browser-syncs proxy adress in `gulpfile.js` in `sync()` accordingly.
 
 1. To setup the database you can either use the dump-file `webconia.sql` which contains example data or press the button **DB-Setup** right below the registration form to create a fresh database and table.
 
