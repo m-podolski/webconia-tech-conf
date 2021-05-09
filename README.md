@@ -15,25 +15,25 @@ Für eine Einschreibung benötigen wir:
 
 ### Setup
 
-1. After putting the project on your server, open `bootstrap.php` and configure **PROJECT_DIR** and **DB_CONFIG** for your setup. These are needed for all the paths and the database access to work.
+1. After putting the project on your server, open `config.php` and configure **PROJECT_DIR** and **DB_CONFIG** for your setup. These are needed for all the paths and the database access to work.
 
-1. Assets like client-side Javascript, CSS and Images have to be processed into a `dist` directory. **Gulp** is already set up to do this. After installing all dependencies via **Yarn** you can start deveopment / watch-mode with `gulp` or create production files with `gulp prod` in the command line .
+1. Assets like client-side Javascript, CSS and Images have to be processed into a `dist` directory. **Gulp** is already set up to do this. After installing all dependencies via **Yarn** you can start development / watch-mode with `gulp` or create production files with `gulp prod` in the command line .
 
 1. To setup the database you can either use the dump-file `webconia.sql` which contains example data or press the button **DB-Setup** right below the registration form to create a fresh database and table.
 
-1. My formatting needs VS Code to have two extensions to be installed: **esbenp.prettier-vscode** and **rifi2k.format-html-in-php**. The latter is the best solution for formatting PHP-templates I could find although the prettier plugin will probably be able to do that at some point.
+1. My formatting needs VS Code to have two extensions to be installed: **esbenp.prettier-vscode** and **rifi2k.format-html-in-php**. The latter is the best solution for formatting PHP-templates I could find although **@prettier/plugin-php** will probably be able to do that at some point.
 
-### Usage
+### Hints
 
 - For convenience the registrated users can be shown via a button on the confirmation page. This would of course be behind a login in production.
 
 ### To Do
 
-- fix form button disable
 - Navigation
   - page links
 - Content
   - image processing
+  - setup hints (yarn run / gulp cli)
 
 ### Image Credits
 

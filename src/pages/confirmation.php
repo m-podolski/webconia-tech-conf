@@ -1,15 +1,16 @@
 <?php
 session_start();
 
-include "../content/microcopy.php";
-include "../controllers/form-controller.php";
+include_once "../../config.php";
+include_once BASE_PATH . "/src/content/microcopy.php";
+include_once BASE_PATH . "/src/controllers/form-controller.php";
 ?>
 
 <html lang="de">
 
 <head>
 
-  <?php include "../templates/head.php"; ?>
+  <?php include BASE_PATH . "/src/templates/head.php"; ?>
 
   <title>
     Webconia Technology Conference 2021 | Registrierung erfolgreich
@@ -18,9 +19,12 @@ include "../controllers/form-controller.php";
 </head>
 
 <body>
+
+  <?php include BASE_PATH . "/src/templates/navigation.php"; ?>
+
   <header class="landmark">
 
-    <?php include "../templates/header.php"; ?>
+    <?php include BASE_PATH . "/src/templates/header.php"; ?>
 
   </header>
 
@@ -42,7 +46,7 @@ include "../controllers/form-controller.php";
 
     <form
       method="post"
-      action="confirmation.php"
+      action="<?php echo BASE_URL . "src/pages/confirmation.php"; ?>"
       class="form contact-form"
     >
 
@@ -57,20 +61,13 @@ include "../controllers/form-controller.php";
 
     </form>
 
-    <?php include "../templates/table-visitors.php"; ?>
+    <?php include BASE_PATH . "/src/templates/table-visitors.php"; ?>
 
   </main>
 
-  <pre>
-    <?php
-    print_r($_SERVER);
-    print_r($_REQUEST);
-    ?>
-  </pre>
-
   <footer class="landmark">
 
-    <?php include "../templates/footer.php"; ?>
+    <?php include BASE_PATH . "/src/templates/footer.php"; ?>
 
   </footer>
 </body>

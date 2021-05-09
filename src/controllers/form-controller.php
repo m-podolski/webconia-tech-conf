@@ -94,8 +94,8 @@ function setupDatabase()
     );
 
     $setupQueries = [
-      "create database if not exists webconia;",
-      "use webconia;",
+      sprintf("create database if not exists %s;", DB_CONFIG["dbname"]),
+      sprintf("use %s;", DB_CONFIG["dbname"]),
       "create table if not exists visitors (
         id mediumint not null auto_increment,
         firstname varchar(90) not null,
@@ -165,7 +165,7 @@ function registerVisitor($fields)
     echo "Data inserted!";
     $db->close();
     unset($_SESSION["dbsetup"]);
-    header("Location: " . BASE_URL . "/src/pages/confirmation.php");
+    header("Location: " . BASE_URL . "src/pages/confirmation.php");
     exit();
   } catch (Exception $ex) {
     echo "Connection FAILED:" . $ex->getMessage();

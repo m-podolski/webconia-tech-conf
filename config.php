@@ -1,6 +1,7 @@
 <?php
 
-/////////////// Setup project here //////////////
+/////////////// Setup project here /////////////////////////////////////////////
+
 define("PROJECT_DIR", "webconia");
 define("DB_CONFIG", [
   "server" => "localhost",
@@ -8,7 +9,7 @@ define("DB_CONFIG", [
   "password" => "pw",
   "dbname" => "webconia",
 ]);
-/////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
 function url()
 {
@@ -21,5 +22,8 @@ function url()
   );
 }
 
-define("BASE_PATH", $_SERVER["DOCUMENT_ROOT"] . "/" . PROJECT_DIR);
+define(
+  "BASE_PATH",
+  $_SERVER["DOCUMENT_ROOT"] . DIRECTORY_SEPARATOR . PROJECT_DIR,
+);
 define("BASE_URL", url());
