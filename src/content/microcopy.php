@@ -23,6 +23,8 @@ $microcopy = [
   "form-setup-info" => "Die Datenbank wurde erfolgreich angelegt!",
   "form-show" => "Einträge anzeigen",
   "back" => "Zur Startseite",
+  "footer-contact" => "Kontaktinformationen",
+  "footer-sponsors" => "Unsere Sponsoren",
 ];
 
 ?>

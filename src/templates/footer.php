@@ -1,5 +1,7 @@
+<?php include BASE_PATH . "/src/content/footer.php"; ?>
+
 <section>
-  <strong>Kontakt</strong>
+  <strong><?php echo $microcopy["footer-contact"]; ?></strong>
   <ul class="footer-list">
     <li>webconia GmbH</li>
     <li>Gänsemarkt 31</li>
@@ -15,22 +17,12 @@
 
 
 <section>
-  <strong>Sponsoren</strong>
+  <strong><?php echo $microcopy["footer-sponsors"]; ?></strong>
   <ul class="sponsors-list">
+    <?php foreach ($sponsors as $logo): ?>
     <li>
-      <img src="./dist/images/logo-code-net.webp">
+      <img src="./dist/images/<?php echo $logo; ?>">
     </li>
-    <li>
-      <img src="./dist/images/logo-storage-engine.webp">
-    </li>
-    <li>
-      <img src="./dist/images/logo-devloply.webp">
-    </li>
-    <li>
-      <img src="./dist/images/logo-php-burst.webp">
-    </li>
-    <li>
-      <img src="./dist/images/logo-tech-shield.webp">
-    </li>
+    <?php endforeach; ?>
   </ul>
 </section>
