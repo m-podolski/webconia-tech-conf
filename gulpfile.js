@@ -12,13 +12,11 @@ const sass = require("gulp-dart-sass");
 const sourcemaps = require("gulp-sourcemaps");
 const webpack = require("webpack-stream");
 
-const source = "./src/";
-const dist = "./dist/";
+const source = "./src/assets/";
+const dist = "./dist/assets/";
 
 async function clean(cb) {
-  await del(dist + "css");
-  await del(dist + "js");
-  await del(dist + "vendor");
+  await del(dist);
 
   cb();
 }
@@ -77,10 +75,6 @@ function jsProd(cb) {
   cb();
 }
 
-function images(cb) {
-  cb();
-}
-
 function imagesProd(cb) {
   src(source + "images/*.{jpeg,jpg,png,gif}")
     .pipe(
@@ -114,13 +108,10 @@ function watcher(cb) {
   watch(source + "**/*.php").on("change", browserSync.reload);
   watch(source + "**/*.scss").on("change", series(css, browserSync.reload));
   watch(source + "**/*.js").on("change", series(js, browserSync.reload));
-
-  cb();
-}
-
-function watcherNoSync(cb) {
-  watch(source + "**/*.scss").on("change", series(css));
-  watch(source + "**/*.js").on("change", series(js));
+  watch(source + "**/*.{jpeg,jpg,png,gif}").on(
+    "change",
+    series(imagesProd, browserSync.reload)
+  );
 
   cb();
 }
@@ -143,6 +134,5 @@ function sync(cb) {
   cb();
 }
 
-exports.default = series(clean, parallel(images, css, js), sync, watcher);
-exports.nosync = series(clean, parallel(images, css, js), watcherNoSync);
+exports.default = series(clean, parallel(imagesProd, css, js), sync, watcher);
 exports.prod = series(clean, parallel(imagesProd, cssProd, jsProd));

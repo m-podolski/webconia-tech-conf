@@ -11,9 +11,9 @@
 
 <link
   rel="stylesheet"
-  href="./dist/css/styles.css"
+  href="./dist/assets/css/styles.css"
 />
 <script
   type="module"
-  src="./dist/js/ui.js"
+  src="./dist/assets/js/ui.js"
 ></script>

@@ -21,7 +21,7 @@
   <ul class="sponsors-list">
     <?php foreach ($sponsors as $logo): ?>
     <li>
-      <img src="./dist/images/<?php echo $logo; ?>">
+      <img src="./dist/assets/images/<?php echo $logo; ?>">
     </li>
     <?php endforeach; ?>
   </ul>
