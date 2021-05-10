@@ -5,6 +5,8 @@ let formValidityState =
       $_SESSION["invalidFields"],
       JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK,
     );
+  } elseif (empty($_SESSION)) {
+    echo "'empty'";
   } else {
     echo "'valid'";
   } ?>;

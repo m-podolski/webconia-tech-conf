@@ -40,24 +40,21 @@ function setInitialState(dom, formValidityState) {
   // Initial Content-display-state (conf.contentState)
   // is set in CSS to prevent flashing
   for (const node of dom.content) {
-    // Content-ARIA-state
     node.setAttribute(conf.contentStateAria, true);
   }
 
-  // primaryControl-display-state
-  // dom.primaryControl.classList.add(conf.primaryControlDispState);
-  // primaryControl-Interaction-state
-  // dom.primaryControl.setAttribute(conf.primaryControlIntState, true);
+  dom.primaryControl.classList.add(conf.primaryControlDispState);
+  dom.primaryControl.setAttribute(conf.primaryControlIntState, true);
   // Set state provided by backend validation
-  if (formValidityState !== "valid") {
+  if (formValidityState === "valid") {
+    for (const control of dom.controls) {
+      control.initValidity = true;
+      validateInput(control, dom);
+    }
+  } else if (formValidityState !== "empty") {
     for (const control of dom.controls) {
       control.initValidity =
         Object.keys(formValidityState).includes(control.name) === false;
-      validateInput(control, dom);
-    }
-  } else {
-    for (const control of dom.controls) {
-      control.initValidity = true;
       validateInput(control, dom);
     }
   }
@@ -81,12 +78,9 @@ function validateInput(control, dom, e) {
 }
 
 function setInputValidState(control) {
-  // Content-display-state
   control.nextElementSibling.style[conf.contentState.property] =
     conf.contentState.valid;
-  // Content-ARIA-state
   control.nextElementSibling.setAttribute(conf.contentStateAria, true);
-  // Control-display-state
   control.classList.remove(conf.controlsStateInd.invalid);
   control.classList.add(conf.controlsStateInd.valid);
 }
@@ -109,16 +103,11 @@ function validateForm(dom) {
   }
 
   if (invalidRequiredFields === 0) {
-    // primaryControl-display-state
     dom.primaryControl.classList.remove(conf.primaryControlDispState);
-    // primaryControl-Interaction-state
     dom.primaryControl.removeAttribute(conf.primaryControlIntState);
-    // display-state set because disappearing button issue
-    dom.primaryControl.style.display = "block";
   } else {
     dom.primaryControl.classList.add(conf.primaryControlDispState);
     dom.primaryControl.setAttribute(conf.primaryControlIntState, true);
-    dom.primaryControl.style.display = "block";
   }
 }
 
