@@ -42,3 +42,6 @@ $contentTrans: 0.2s;
 $elemTrans: 0.1s;
 
 $bp-icons: 45em;
+// Should match "window.matchMedia()" in navigation.js
+$bp-nav: 45em;
+$bp-footer: 55em;

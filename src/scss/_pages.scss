@@ -53,7 +53,29 @@ header {
   color: colours.$content-medium;
 }
 .content-list,
-.footer-list {
+.footer-list,
+.sponsors-list {
   list-style: none;
   padding: unset;
+}
+footer {
+  @media screen and (min-width: config.$bp-footer) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: config.raster(4);
+  }
+}
+footer section {
+  margin: 0 0 config.raster(4) 0;
+}
+.sponsors-list {
+  padding: unset;
+  list-style: none;
+}
+.sponsors-list li {
+  display: inline-block;
+  padding: config.raster(2);
+}
+.sponsors-list img {
+  width: 150px;
 }
