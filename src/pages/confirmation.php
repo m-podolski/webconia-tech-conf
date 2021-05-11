@@ -3,7 +3,7 @@ session_start();
 
 include_once "../../config.php";
 include_once BASE_PATH . "/src/content/microcopy.php";
-include_once BASE_PATH . "/src/controllers/form-controller.php";
+include_once BASE_PATH . "/src/controllers/form.php";
 ?>
 
 <html lang="de">
@@ -26,7 +26,7 @@ include_once BASE_PATH . "/src/controllers/form-controller.php";
 
     <div class="header-wrapper">
       <img
-        src="./dist/assets/images/webconia.png"
+        src="./dist/assets/images/webconia.webp"
         alt="Webconia"
         class="header-logo"
       />

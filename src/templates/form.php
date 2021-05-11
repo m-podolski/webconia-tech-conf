@@ -3,7 +3,7 @@ let formValidityState =
   <?php if (empty($_SESSION["invalidFields"]) === false) {
     echo json_encode(
       $_SESSION["invalidFields"],
-      JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK,
+      JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK
     );
   } elseif (empty($_SESSION)) {
     echo "'empty'";
@@ -130,7 +130,10 @@ let formValidityState =
   <p class="action-info <?php echo empty($_SESSION["dbsetup"])
     ? "noerror"
     : ""; ?>">
-    <?php echo $microcopy["form-setup-info"]; ?>
+    <?php echo empty($_SESSION["dbsetup"]) === false &&
+    $_SESSION["dbsetup"] === true
+      ? $microcopy["form-setup-info"]
+      : $_SESSION["dbsetup"]; ?>
   </p>
 
 </form>

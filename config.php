@@ -5,9 +5,10 @@
 define("PROJECT_DIR", "webconia");
 define("DB_CONFIG", [
   "server" => "localhost",
-  "user" => "user",
-  "password" => "pw",
-  "dbname" => "webconia",
+  "user" => "admin",
+  "password" => "Maki88",
+  "name" => "webconia",
+  "tableName" => "visitors",
 ]);
 ////////////////////////////////////////////////////////////////////////////////
 

@@ -2,7 +2,7 @@
 session_start();
 
 include_once BASE_PATH . "/src/content/microcopy.php";
-include_once BASE_PATH . "/src/controllers/form-controller.php";
+include_once BASE_PATH . "/src/controllers/form.php";
 ?>
 
 <html lang="de">
