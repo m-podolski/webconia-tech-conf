@@ -202,21 +202,17 @@ class Visitors
 }
 
 $form = new Form(["website", "firstname", "lastname", "organisation", "email"]);
-
 $visitors = new Visitors();
 
 if (isset($_POST["setup"]) && $_POST["setup"] === "setup") {
   $visitors->setupDatabase();
 }
-
 if (isset($_POST["submit"]) && $_POST["submit"] === "submit") {
   $validFields = $form->validate();
-
   if ($validFields !== false) {
     $visitors->register($validFields);
   }
 }
-
 if (isset($_POST["show"]) && $_POST["show"] === "show") {
   $visitors->show();
 }
