@@ -11,7 +11,7 @@ src/.temp
 .env.*
 # *.jpg
 # *.png
-*.gif
+# *.gif
 *.webp
 *.pdf
 *.woff
