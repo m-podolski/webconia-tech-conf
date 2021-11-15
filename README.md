@@ -1,19 +1,16 @@
 # Webconia Technology Conference (Demo)
 
-## Webconia Programmieraufgabe 1
+Dieses Projekt stellt eine einfache Website dar, die die mittels PHP und SQL Formulareinträge validiert, in einer MariaDB/MySQL Datenbank ablegt und anzeigt. Zusätzlich verfügt das Anmeldungsfomular über eine effektive und benutzerfeundliche Frontend-Validierung.
 
-### User Story
+![Screencast](./screencast.gif)
 
-Wir haben beschlossen, dass wir alle unsere Kunden zur diesjährigen WTC (webconia Technology Conference) einladen möchten. Um die Anzahl an Teilnehmern zu bestimmen und einen finalen Termin mitzuteilen, benötigen wir eine Webseite, auf welcher sich unser Kunde für die Teilnahme an der WTC 2021 einschreiben kann.
+## User Story
 
-Die Webseite sollte dabei in PHP entwickelt und an eine SQL Datenbank angebunden sein. Darüber hinaus würden wir uns freuen, wenn uns der Code über Github zur Verfügung gestellt wird, dies ist jedoch optional.
-Für eine Einschreibung benötigen wir:
-- Vorname
-- Nachname
-- E-Mail
-- Firma
+Wir haben beschlossen, dass wir alle unsere Kunden zur diesjährigen WTC (Webconia Technology Conference) einladen möchten. Um die Anzahl an Teilnehmern zu bestimmen und einen finalen Termin mitzuteilen, benötigen wir eine Webseite, auf welcher sich unser Kunde für die Teilnahme an der WTC 2021 einschreiben kann.
 
-### Setup
+Die Webseite sollte dabei in PHP entwickelt und an eine SQL Datenbank angebunden sein. Für eine Einschreibung benötigen wir: Vorname, Nachname, E-Mail, Firma
+
+## Setup
 
 1. After putting the project on your server, open `config.php` and configure **PROJECT_DIR** and **DB_CONFIG** for your setup. These are needed for all the paths and the database access to work.
 
@@ -23,11 +20,11 @@ Für eine Einschreibung benötigen wir:
 
 1. My formatting needs VS Code to have two extensions to be installed: **esbenp.prettier-vscode** and **rifi2k.format-html-in-php**. The latter is the best solution for formatting PHP-templates I could find.
 
-### Hints
+## Hints
 
 - For convenience the registrated users can be shown via a button on the confirmation page. This would of course be behind a login in production.
 
-### Image Credits
+## Image Credits
 
 <a href="https://unsplash.com/@meduana?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Meduana</a> on <a href="https://unsplash.com/s/photos/hamburg?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
