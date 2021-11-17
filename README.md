@@ -1,14 +1,18 @@
 # Webconia Technology Conference (Demo)
 
-Dieses Projekt stellt eine einfache Website dar, die die mittels PHP und SQL Formulareinträge validiert, in einer MariaDB/MySQL Datenbank ablegt und anzeigt. Zusätzlich verfügt das Anmeldungsfomular über eine effektive und benutzerfeundliche Frontend-Validierung.
+This project is a simple website that validates form entries using PHP and SQL, stores them in a MariaDB / MySQL database and displays them. In addition, the registration form has an effective and user-friendly front-end validation.
 
 ![Screencast](./screencast.gif)
 
+## About the code
+
+src/controllers/**form.php** is the central part of this project. It handles all of sanitization, validation and database input.
+
 ## User Story
 
-Wir haben beschlossen, dass wir alle unsere Kunden zur diesjährigen WTC (Webconia Technology Conference) einladen möchten. Um die Anzahl an Teilnehmern zu bestimmen und einen finalen Termin mitzuteilen, benötigen wir eine Webseite, auf welcher sich unser Kunde für die Teilnahme an der WTC 2021 einschreiben kann.
+We have decided that we would like to invite all of our customers to this year's WTC (Webconia Technology Conference). In order to determine the number of participants and to communicate a final date, we need a website on which our customers can register to participate in the WTC 2021.
 
-Die Webseite sollte dabei in PHP entwickelt und an eine SQL Datenbank angebunden sein. Für eine Einschreibung benötigen wir: Vorname, Nachname, E-Mail, Firma
+The website should be developed in PHP and connected to an SQL database. For a registration we need: first name, last name, e-mail, company.
 
 ## Setup
 
